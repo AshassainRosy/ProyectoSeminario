@@ -1,0 +1,79 @@
+<template name="register">
+{{>nav}}
+{{>sidenav}}
+  <div class="contairner">
+  <div id="login-page" class="row">
+    <div class="col s2">
+      <div class="card-panel teal lighten">
+        Crear Nuevo usuario
+      </div>
+    </div>
+    <div class="col s8 z-depth-4 card-panel">
+    
+      <form class="login-form">
+        <div class="row">
+          <div class="input-field col s12 center">
+            <img src="images/login-logo.jpg" alt="" class="circle responsive-img valign profile-image-login">
+            <p class="center login-form-text">Registrarse en:</p>
+            <p class="center login-form-text">Clases Virtuales</p>
+          </div>
+        </div>
+        <div class="row margin">
+          <div class="input-field col s6">
+            <i class="mdi-social-person-outline prefix"></i>
+            <input id="name" type="text" style="color:#000" required>
+            <label for="name" class="center-align">Nombre</label>
+          </div>
+          <div class="input-field col s6">
+            <i class="mdi-social-person-outline prefix"></i>
+            <input id="last_name" type="text" style="color:#000" required>
+            <label for="Apellido" class="center-align">Apellido</label>
+          </div>
+        </div>
+        <div class="row margin">
+          <div class="input-field col s6">
+            <i class="mdi-social-person-outline prefix"></i>
+            <input id="career" type="text" style="color:#000" required>
+            <label for="Carrera" class="center-align">Carrera</label>
+          </div>
+        </div>
+        <div class="row margin">
+          <div class="input-field col s6">
+            <i class="mdi-social-person-outline prefix"></i>
+            <input id="nick" type="text" style="color:#000" required>
+            <label for="nick" class="center-align">Nick</label>
+          </div>
+          <div class="input-field col s6">
+            <i class="mdi-social-person-outline prefix"></i>
+            <input id="email" type="text" style="color:#000" required>
+            <label for="email" class="center-align">Email</label>
+          </div>
+        </div>
+        <div class="row margin">
+          <div class="input-field col s6">
+            <i class="mdi-action-lock-outline prefix"></i>
+            <input id="password" type="password" style="color:#000" required>
+            <label for="password">Password</label>
+          </div>
+          <div class="input-field col s6">
+            <i class="mdi-action-lock-outline prefix"></i>
+            <input id="confirm_password" type="password" style="color:#000" required>
+            <label for="confirm_password">Confirmar Password</label>
+          </div>
+        </div>
+        <div class="row margin">
+          <div class="input-field col s6">
+            <button class="btn waves-effect waves-light" type="submit" name="action">Submit
+              <i class="material-icons right">send</i>
+            </button>
+          </div>
+          <div class="input-field col s6">
+            <a href="/" class="btn waves-effect waves-light col s6">Cancelar</a>
+          </div>
+        </div>
+        
+      </form>
+    </div>
+  </div>
+  </div>
+</template>
