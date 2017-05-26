@@ -1,0 +1,44 @@
+<Template name="contentAdminUsers">
+	<div id="card-stats">
+        <div class="row">
+            <div class="col s12 m6 l12">
+                <div class="divider"></div>
+	            <div id="striped-table">
+	              <h4 class="header">Lista de Usuarios</h4>
+	              <div class="row">
+	                <div class="col s12 m4 l3">
+	                  <p>
+	                  	Usuarios Registrados en el sistema
+	                  </p>
+	                </div>
+	                <div class="col s12 m8 l9">
+	                  <table class="striped">
+	                    <thead>
+	                      <tr>
+	                        <th>Nombre</th>
+	                        <th>Apellido</th>
+	                        <th>Carrera</th>
+	                        <th>Username</th>
+	                        <th>Roles</th>
+	                      </tr>
+	                    </thead>
+	                    <tbody>
+	                    {{#each usuarios}}
+							<tr data-id="{{_id}}">
+	                        	<td>{{profile.name}}</td>
+	                        	<td> {{profile.last_name}}</td>
+	                        	<td>{{profile.career}}</td>
+	                        	<td>{{username}}</td>
+	                        	<td><a href="admin_user/{{_id}}" class="btn-floating waves-effect waves-light deep-orange"><i class="mdi-content-add"></i></a></td>
+	                      	</tr>
+						{{/each}}
+	                      
+	                    </tbody>
+	                  </table>
+	                </div>
+	              </div>
+	            </div>
+            </div>                        
+        </div>
+    </div>
+</Template>

@@ -6,9 +6,17 @@ Template.loginform.events({
 	"submit form":function(e){
 		var username=e.target.username.value;
 		var password=e.target.password.value;
-		Meteor.loginWithPassword(username,password);	
-		FlowRouter.go("/index");
-		return  false;
+		Meteor.loginWithPassword(username,password,function(err){
+			if (err) {
+                console.log('Handle errors here: ', err);
+                Materialize.toast('<span>Los Credenciales son incorrectos</span>', 4000);
+                return false;
+            }else{
+            	FlowRouter.go("/index");
+            	return false;
+            }
+		});	
+		return false;
 	},
 	"click .login-facebook": function(e) {
         e.preventDefault();

@@ -10,5 +10,9 @@ Template.aside.events({
 	"click #logout":function(e){
 		Meteor.logout();
 		FlowRouter.go('/');
+	},
+	"click #alogout":function(e){
+		Meteor.logout();
+		FlowRouter.go('/');
 	}
 });
