@@ -1,14 +1,5 @@
-<template name="content">
-	<div class="contairner">
-  <div id="login-page" class="row">
-  	<div class="col s3">
-  		<div class="card-panel teal lighten">
-    	  Login de usuario
-    	</div>
-  	</div>
-    <div class="col s6 z-depth-4 card-panel">
-    
-      <form class="login-form">
+<template name="loginform">
+<form class="login-form">
         <div class="row">
           <div class="input-field col s12 center">
             <img src="images/login-logo.jpg" alt="" class="circle responsive-img valign profile-image-login">
@@ -31,10 +22,19 @@
         </div>
         <div class="row">
           <div class="input-field col s12">
-            {{> loginButtons}}
           </div>
           <div class="input-field col s12">
-            <a href="#" id="login" class="login-facebook">Inciar</a>
+          <button class="btn waves-effect waves-light" type="submit" name="action">Iniciar
+              <i class="material-icons right">send</i>
+            </button>
+          </div>
+
+        </div>
+        <div class="row">
+          <div class="input-field col s12">
+          </div>
+          <div class="input-field col s12">
+            <a href="#" id="login" class="login-facebook">Facebook</a>
           </div>
         </div>
         <div class="row">
@@ -49,10 +49,4 @@
         </div>
 
       </form>
-
-    </div>
-
-  </div>
-
-	</div>
 </template>
