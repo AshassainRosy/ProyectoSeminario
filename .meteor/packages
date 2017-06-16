@@ -23,7 +23,7 @@ kadira:flow-router
 kadira:blaze-layout
 accounts-password
 accounts-ui
-jquery
+#jquery
 #twbs:bootstrap
 alanning:roles
 aldeed:collection2

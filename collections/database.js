@@ -1,32 +1,15 @@
-CHAT = new  Mongo.Collection("chat");
-CONNECT = new Mongo.Collection("connect");
+CURSO = new  Mongo.Collection("Curso");
 var chatSchema = new SimpleSchema({
-	idSource: {
+	idCurso: {
 		type:String
 	},
-	idDestination: {
+	nombre: {
 		type:String
 	},
-	date: {
+	descripcion: {
+		type:String
+	},
+	fecha_inicio: {
 		type:Date
-	},
-	message: {
-		type:String
 	}
 });
-CHAT.attachSchema(chatSchema);
-var connectSchema = new SimpleSchema({
-	idUs: {
-		type:String
-	},
-	connectionDate: {
-		type:Date
-	},
-	disconnectionDate: {
-		type:Date
-	},
-	stade: {
-		type:Boolean
-	}
-});
-CONNECT.attachSchema(connectSchema);
