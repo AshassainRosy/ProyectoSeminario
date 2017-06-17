@@ -1,22 +1,22 @@
-CHAT = new  Mongo.Collection("chat");
-CONNECT = new Mongo.Collection("connect");
-var chatSchema = new SimpleSchema({
-	idSource: {
-		type:String
-	},
-	idDestination: {
-		type:String
-	},
+CURSO = new  Mongo.Collection("curso");
+var cursoSchema = new SimpleSchema({
 	date: {
 		type:Date
 	},
-	message: {
+	name: {
+		type:String
+	},
+	description:{
 		type:String
 	}
 });
-CHAT.attachSchema(chatSchema);
-var connectSchema = new SimpleSchema({
+CONNECTCURSO = new Mongo.Collection("connectcurso");
+CURSO.attachSchema(cursoSchema);
+var connectcursoSchema = new SimpleSchema({
 	idUs: {
+		type:String
+	},
+	idCurso:{
 		type:String
 	},
 	connectionDate: {
@@ -29,4 +29,4 @@ var connectSchema = new SimpleSchema({
 		type:Boolean
 	}
 });
-CONNECT.attachSchema(connectSchema);
+CONNECTCURSO.attachSchema(connectcursoSchema);

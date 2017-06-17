@@ -30,37 +30,22 @@ Meteor.startup(() => {
 			]
 		}
 	});
-	Meteor.publishComposite("getConnections",{
+	Meteor.publishComposite("cursos_db",{
 		find(){
-			return CONNECT.find({stade:true});
+			return CURSOS.find();
 		},
-		children:[{
-			find(connect){
-				return Meteor.users.find({_id:connect.idUs});
-			}
-		}]
 	});
 	Meteor.methods({
-		"checkConnection": function(id){
-			// select * from connect where idus=id and stade = true
-			var result = CONNECT.find({idUs:id,stade:true}).fetch();
-			if(result.length>0){
-				return {value:true,id:result[0]._id};
-			}
-			return {value:false};
-		},
-		"createConnection": function(idus){
-			console.log(idus);
-			var id = CONNECT.insert({idUs:idus,connectionDate:new Date(),disconnectionDate:new Date(),stade:true});
+		"new_curso":function(obj){
+			var id=CURSO.insert({date:obj.date,name:obj.nombre,description:obj.descripcion});
 			return id;
 		},
-		"disconnection": function(id){
-			CONNECT.update(id,{$set:{stade:false,disconnectionDate:new Date()}});
+		"update_curso":function(id){
+			CURSO.uptade({id,$set:{date:fecha,name:nombre,description:description}});
 			return true;
 		},
-		"addChat": function(msnObj){
-			CHAT.insert(msnObj);
-			return true;
+		"get_curso":function(){
+			return CURSO.find();
 		}
 	});
 });

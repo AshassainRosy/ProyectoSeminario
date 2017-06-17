@@ -33,7 +33,18 @@
 	                    </li>
 	                  </ul>
 	                </div>
-	                <div class="col s12 m8 l9">
+	                {{>Template.dynamic template=contenido_tabla}}
+	              </div>
+	            </div>
+            </div>                        
+        </div>
+    </div>
+</Template>
+<Template name="contenedor_tabla_curso">
+<div class="col s12 m8 l9">
+	                <a id="crear_curso" href="btn-floating btn-large waves-effect waves-light pink">
+	                <i class="mdi-content-add"></i>
+	                Crear</a>
 	                  <table class="striped">
 	                    <thead>
 	                      <tr>
@@ -43,17 +54,57 @@
 	                      </tr>
 	                    </thead>
 	                    <tbody>
-	                    <tr>
-	                    	<td></td>
-	                    	<td></td>
-	                    	<td></td>
+	                    {{#each cursos_list}}
+						<tr>
+	                    	<td>{{nombre}}</td>
+	                    	<td>{{descripcion}}</td>
+	                    	<td>{{fecha}}</td>
 	                    </tr>
+						{{/each}}
+	                    
 	                    </tbody>
 	                  </table>
 	                </div>
-	              </div>
-	            </div>
-            </div>                        
+</Template>
+
+<Template name="formulario_crear_curso">
+<div class="col s12 m8 l9">
+    <a id="cancelar_curso" href="btn-floating btn-large waves-effect waves-light pink">
+        <i class="mdi-content-add"></i>
+            Cancelar
+    </a>
+    
+	<form class="register-form">
+        <div class="row margin">
+          <div class="input-field col s12">
+            <i class="mdi-social-person-outline prefix"></i>
+            <input id="name" name="name" type="text" style="color:#000" required>
+            <label for="name" class="center-align">Nombre</label>
+          </div>
         </div>
-    </div>
+        <div class="row margin">
+          <div class="input-field col s12">
+            <i class="mdi-action-work prefix"></i>
+            <input id="fecha" name="fecha" type="date" style="color:#000" required>
+            
+          </div>
+        </div>
+        <div class="row margin">
+          <div class="input-field col s12">
+            <i class="mdi-social-group prefix"></i>
+            <input id="descripcion" name="descripcion" type="text" style="color:#000" required>
+            <label for="username" class="center-align">Descripcion</label>
+          </div>
+        </div>
+        <div class="row margin">
+          <div class="input-field col s4">
+            <button class="btn waves-effect waves-light" type="submit" name="action">Guardar
+            </button>
+          </div>
+          <div class="input-field col s4">
+            <a href="#" id="cancelar" class="btn waves-effect waves-light col s6">Cancelar</a>
+          </div>
+        </div>
+      </form>
+</div>
 </Template>
