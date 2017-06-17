@@ -1,0 +1,48 @@
+<head></head>
+<body>
+	<div class="navbar navbar-static-top">
+		<div class="navbar-inner">
+	  	<a class="brand" href="http://blog.magm.com.ar" target="_blank">Chat</a>
+		  <ul class="nav navbar-nav pull-right">
+		    <li>
+		    	<a href="#">{{loginButtons align="right"}}</a>
+		    </li>
+		  </ul>
+		</div>
+	</div>
+	{{> Iniciochat}}
+</body>
+
+<template name="Iniciochat">
+	{{#if currentUser}}
+		<div class="row vspace">
+			<div class="offset4 span4 text-center">
+				<textarea id="texto" rows="5"></textarea>
+			</div>
+			<div class="span4">
+				Instrucciones:
+				<ul>
+					<li><a class="waves-effect waves-light btn">ENVIAR</a></li>
+					<li><a class="waves-effect waves-light btn">SALIR</a></li>
+					
+				</ul>
+			</div>
+		</div>
+		<hr/>
+		<div class="row">
+			<div class="offset2 span8">
+				{{> chatItems}}
+			</div>
+		</div>
+	{{/if}}
+</template>
+
+<template name="chatItems">
+	<ul>
+		{{#each entradas}}
+			<li class="itemchat">
+				<b>{{nombre}}: </b>{{{texto}}}
+			</li>
+		{{/each}}
+	</ul>
+</template>
